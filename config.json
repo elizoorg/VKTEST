@@ -1,0 +1,97 @@
+{
+  "SteamAppId": 2435770,
+  "GameName": "Black Myth: Wukong Benchmark Tool",
+  "Launch": {
+    "Mode": "Executable",
+    "Args": "",
+    "ProcessNames": [ "b1" ],
+    "StartupTimeoutSec": 180,
+    "BenchmarkTimeoutSec": 1800,
+    "IntroClick": { "Enabled": true, "DelaySec": 30, "XPercent": 50, "YPercent": 50 },
+    "AutoPressEnter": true,
+    "AutoPressEnterDelaySec": 30,
+    "CloseWindowOnResults": true,
+    "GracePeriodAfterExitSec": 5,
+    "ScreenshotOnFinish": true
+  },
+  "Ocr": {
+    "Enabled": true,
+    "PollIntervalSec": 2.0,
+    "StartScreenWaitSec": 120,
+    "ResultsStartAfterSec": 145,
+    "ResultsGiveUpAfterExitSec": 90,
+    "MenuWords": [ "быстродейств", "тест быстродействия", "benchmark", "开始测试" ],
+    "ConfirmWords": [ "подтверд", "confirm", "确认" ],
+    "ExcludeWords": [ "tool", "wukong", "myth", "black" ]
+  },
+  "Settings": {
+    "TargetIniSection": "[/Script/GSGameSettings.GSGameUserSettings]",
+    "IniCandidates": [
+      "{GAME_DIR}\\Saved\\Config\\Windows\\GameUserSettings.ini"
+    ],
+    "RegistryKeys": [
+      "HKEY_CURRENT_USER\\Software\\Game Science\\BlackMythWukongBenchmarkTool",
+      "HKEY_CURRENT_USER\\Software\\Game Science\\BlackMythWukongBenchmark",
+      "HKEY_CURRENT_USER\\Software\\Game Science\\BlackMythWukong"
+    ]
+  },
+  "Results": {
+    "WatchDirs": [
+      "{GAME_DIR}\\Saved"
+    ],
+    "IncludeInstallDir": true,
+    "WatchDirDepth": 8,
+    "InstallDirDepth": 6
+  },
+  "PresentMon": {
+    "Enabled": true,
+    "Path": "tools/PresentMon.exe",
+    "TrimHeadSec": 10,
+    "TrimTailSec": 20
+  },
+  "Profiles": {
+    "CPU": {
+      "Description": "CPU-тест: масштаб рендера 50%, все группы качества на минимуме, RT/vsync/лимит FPS off. GPU почти не загружен, узкое место — процессор.",
+      "Ini": {
+        "sg.ResolutionQuality": "50",
+        "sg.ViewDistanceQuality": "0",
+        "sg.AntiAliasingQuality": "0",
+        "sg.ShadowQuality": "0",
+        "sg.GlobalIlluminationQuality": "0",
+        "sg.RayTracingQuality": "0",
+        "sg.ReflectionQuality": "0",
+        "sg.PostProcessQuality": "0",
+        "sg.TextureQuality": "0",
+        "sg.EffectsQuality": "0",
+        "sg.FoliageQuality": "0",
+        "sg.ShadingQuality": "0",
+        "bUseVSync": "False",
+        "bUseDynamicResolution": "False",
+        "FrameRateLimit": "0.000000",
+        "r.RayTracing.EnableInGame": "False"
+      },
+      "RegistryDwords": {}
+    },
+    "GPU": {
+      "Description": "GPU-тест: масштаб рендера 100%, Epic по всем группам, vsync/лимит FPS off. Узкое место — GPU. Уровень 4 (Cinematic) можно попробовать экспериментом: если тулза не сбрасывает в 3 — оставить 4.",
+      "Ini": {
+        "sg.ResolutionQuality": "100",
+        "sg.ViewDistanceQuality": "3",
+        "sg.AntiAliasingQuality": "3",
+        "sg.ShadowQuality": "3",
+        "sg.GlobalIlluminationQuality": "3",
+        "sg.RayTracingQuality": "3",
+        "sg.ReflectionQuality": "3",
+        "sg.PostProcessQuality": "3",
+        "sg.TextureQuality": "3",
+        "sg.EffectsQuality": "3",
+        "sg.FoliageQuality": "3",
+        "sg.ShadingQuality": "3",
+        "bUseVSync": "False",
+        "bUseDynamicResolution": "False",
+        "FrameRateLimit": "0.000000"
+      },
+      "RegistryDwords": {}
+    }
+  }
+}
